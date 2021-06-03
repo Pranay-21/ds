@@ -50,4 +50,4 @@ LS - In a linear search, the best-case scenario for finding the first element in
 BS - In a binary search, the best-case scenario for finding the first element in the list is O(1).
 Dimensional array	: - 
 LS - It can be implemented on both a single and multidimensional array.	
-BS - It can be implemented only on a multidimensional array.
+BS - It can be implemented on both a single and multidimensional array.
