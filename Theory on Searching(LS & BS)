@@ -44,7 +44,7 @@ BS - It is more efficient in the case of large-size data sets.
 
 Worst-case scenario : -	
 LS - In a linear search, the worst- case scenario for finding the element is O(n).	
-BS - In a binary search, the worst-case scenario for finding the element is O(log2n).
+BS - In a binary search, the worst-case scenario for finding the element is O(log2n)- base 2.
 Best-case scenario : -	
 LS - In a linear search, the best-case scenario for finding the first element in the list is O(1).	
 BS - In a binary search, the best-case scenario for finding the first element in the list is O(1).
