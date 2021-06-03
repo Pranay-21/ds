@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main{
+      public static void main(String[] args){
+            int arr[], len;
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter the length of the array: ");
+            len = sc.nextInt();
+            arr = new int[len];
+            System.out.println("Enter "+len+" elements: ");
+            for(int i=0; i<len; i++){
+                  arr[i] = sc.nextInt();
+            }
+            System.out.print("The array elements are: ");
+            for(int i=0; i<len; i++){
+                  System.out.print(arr[i]+" ");
+                  System.out.println();
+            }
+            System.out.print("The elements of array after sorting are: ");
+            BubbleSort(arr, len);
+            for(int i = 0; i<len; i++){
+                  System.out.print(arr[i]+" ");
+            }
+      }
+      public static void BubbleSort(int arr[], int len){
+            for(int i = 0; i<len; i++){
+                  for(int j = 0; j<len-i-1; j++){
+                        if(arr[j] > arr[j+1]){
+                              int temp = arr[j];
+                              arr[j] = arr[j+1];
+                              arr[j+1] = temp;
+                        }
+                  }
+            }
+      }
+}
