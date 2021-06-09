@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main{
+      public static void main(String[] args){
+            int arr[]; int len; 
+            int i,j;
+            int temp = 0;
+            
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter the length of the array: ");
+            len = sc.nextInt();
+            arr = new int[len];
+            
+            System.out.print("Enter "+len+" elements: ");
+            for(i = 0; i<len; i++){
+                  arr[i] = sc.nextInt();
+            }
+            
+            System.out.print("The array is: ");
+            for(i = 0; i<len; i++){
+                  System.out.print(arr[i]+" ");
+            }
+            System.out.println();
+            
+            for(i = 1; i<len; i++)
+            {
+                  temp = arr[i];
+                  j = i-1;
+                  while(j>=0 && arr[j]>temp){
+                        arr[j+1] = arr[j];
+                        j--;
+                  }
+                  arr[j+1] = temp;
+            }
+            System.out.print("The Elements after sorting are: ");
+            for(i=0; i<len; i++){
+                  System.out.print(arr[i]+" ");
+            }
+      }
+}
