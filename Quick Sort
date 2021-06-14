@@ -1,0 +1,56 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            int len, arr[];
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter the length of the array: ");
+            len = sc.nextInt();
+            arr = new int[len];
+            System.out.print("Enter "+len+" elements: ");
+            for(int i = 0; i<len; i++){
+                  arr[i] = sc.nextInt(); 
+            }
+            System.out.print("The elements are: ");
+            printarray(arr);
+            QS(arr, 0, len-1);
+            System.out.print("\nThe elements after sorting are: ");
+            printarray(arr);
+      }
+      public static void printarray(int arr[]){
+            System.out.println();
+            for(int i = 0; i<arr.length; i++)
+                  System.out.print(arr[i]+" ");
+      }
+      public static void QS(int arr[], int lb, int ub){
+            if(lb<ub){
+                  int loc = partition(arr,lb,ub);
+                  QS(arr,lb,loc-1);
+                  QS(arr,loc+1,ub);
+            }
+      }
+      public static int partition(int arr[], int lb, int ub){
+            int pivot = arr[lb];
+            int start = lb;
+            int end = ub;
+            while(lb<ub){
+                  while(arr[start]<=pivot && start<=ub)
+                        start++;
+                  while(arr[end]>pivot && end>lb)
+                        end--;
+                  
+                  if(start<end){
+                        int temp = arr[start];
+                        arr[start] = arr[end];
+                        arr[end] = temp;
+                  }
+                  
+                  else 
+                  break;
+            }
+            int temp = arr[lb];
+            arr[lb] = arr[end];
+            arr[end] = temp;
+            return end;
+      }
+}
